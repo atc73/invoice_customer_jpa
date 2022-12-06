@@ -10,15 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="092f286d-d6d1-4bc6-8fae-2bc06108a7ca" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/management_app/servlet/invoiceServlet/DeleteInvoiceServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/management_app/servlet/invoiceServlet/InvoiceListServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/management_app/servlet/invoiceServlet/UpdateInvoiceServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/update-invoice.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/management_app/dao/UserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/management_app/filter/AuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/management_app/servlet/logServlet/LoginServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/management_app/servlet/logServlet/LogoutServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/header.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/management_app/model/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/management_app/model/Invoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/management_app/servlet/customerServlet/UpdateGameServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/management_app/servlet/customerServlet/UpdateCustomerServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/management_app/servlet/invoiceServlet/AddInvoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/management_app/servlet/invoiceServlet/AddInvoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/add-invoice.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/add-invoice.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/customer-list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/invoice-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/invoice-list.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -164,7 +163,7 @@
       <option name="presentableId" value="Default" />
       <updated>1670249786493</updated>
       <workItem from="1670249788889" duration="13002000" />
-      <workItem from="1670314155339" duration="22495000" />
+      <workItem from="1670314155339" duration="26099000" />
     </task>
     <servers />
   </component>

@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -22,7 +21,6 @@ public class Invoice {
     private Float total;
 
     @ManyToOne
-    @Column(name="customer_id")
     private Customer customer;
 
     @OneToMany(mappedBy = "invoice")
@@ -30,6 +28,12 @@ public class Invoice {
 
     public Invoice() {
 
+    }
+
+    public Invoice(LocalDate invoiceDate, Float total, Customer customer) {
+        this.invoiceDate = invoiceDate;
+        this.total = total;
+        this.customer = customer;
     }
 
     public Long getInvoiceId() {
@@ -62,5 +66,13 @@ public class Invoice {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public List<InvoiceProductAssociation> getAssociationList() {
+        return associationList;
+    }
+
+    public void setAssociationList(List<InvoiceProductAssociation> associationList) {
+        this.associationList = associationList;
     }
 }

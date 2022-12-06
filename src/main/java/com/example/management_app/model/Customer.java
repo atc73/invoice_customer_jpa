@@ -38,6 +38,25 @@ public class Customer {
 
     }
 
+    public Customer(Long customerId, String name, String address, Integer postcode, String city, String phoneNumber, String email) {
+        this.customerId = customerId;
+        this.name = name;
+        this.address = address;
+        this.postcode = postcode;
+        this.city = city;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
+
+    public Customer(String name, String address, Integer postcode, String city, String phoneNumber, String email) {
+        this.name = name;
+        this.address = address;
+        this.postcode = postcode;
+        this.city = city;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
+
     public Long getCustomerId() {
         return customerId;
     }
@@ -100,5 +119,18 @@ public class Customer {
 
     public void setInvoiceList(List<Invoice> invoiceList) {
         this.invoiceList = invoiceList;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "customerId=" + customerId +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", postcode=" + postcode +
+                ", city='" + city + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }

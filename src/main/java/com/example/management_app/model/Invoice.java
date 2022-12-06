@@ -36,6 +36,13 @@ public class Invoice {
         this.customer = customer;
     }
 
+    public Invoice(Long invoiceId, LocalDate invoiceDate, Float total, Customer customer) {
+        this.invoiceId = invoiceId;
+        this.invoiceDate = invoiceDate;
+        this.total = total;
+        this.customer = customer;
+    }
+
     public Long getInvoiceId() {
         return invoiceId;
     }

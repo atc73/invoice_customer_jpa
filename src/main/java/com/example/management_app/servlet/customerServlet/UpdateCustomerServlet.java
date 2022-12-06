@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.Optional;
 
 @WebServlet(urlPatterns = "/customers/update")
-public class UpdateGameServlet extends HttpServlet {
+public class UpdateCustomerServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

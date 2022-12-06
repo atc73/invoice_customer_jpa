@@ -45,6 +45,6 @@ public class AddInvoice extends HttpServlet {
         } else {
             System.out.printf("customer not found");
         }
-        resp.sendRedirect(req.getContextPath() + "/customers");
+        resp.sendRedirect(req.getContextPath() + "/invoices");
     }
 }

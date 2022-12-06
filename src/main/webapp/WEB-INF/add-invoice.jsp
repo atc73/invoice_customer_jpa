@@ -13,7 +13,7 @@
   <input id="invoiceDate" type="date" name="invoiceDate">
 
   <label for="invoiceTotal">Total :</label>
-  <input id="invoiceTotal" type="number" step="0.01" name="invoiceTotal">
+  <input id="invoiceTotal" type="number" step="0.01" min="0" name="invoiceTotal">
 
   <label for="customers">Choose a customer:</label>
   <select name="customers" id="customers">

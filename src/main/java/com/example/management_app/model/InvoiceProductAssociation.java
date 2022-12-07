@@ -24,6 +24,12 @@ public class InvoiceProductAssociation {
 
     }
 
+    public InvoiceProductAssociation(Integer productQuantity, Invoice invoice, Product product) {
+        this.productQuantity = productQuantity;
+        this.invoice = invoice;
+        this.product = product;
+    }
+
     public Long getInvoiceProductAssociationId() {
         return invoiceProductAssociationId;
     }

@@ -20,6 +20,9 @@
         <li>${invoice.invoiceDate}</li>
         <li>${invoice.total}</li>
         <li>${invoice.customer.getName()}</li>
+        <c:forEach items="${invoice.getAssociationList()}" var="obj">
+            <li>${obj.getProduct().getName()} - ${obj.getProductQuantity()}</li>
+        </c:forEach>
         <li style="list-style: none;">
             <form method="post" action="${pageContext.request.contextPath}/invoices/delete">
                 <input type="hidden" value="${invoice.invoiceId}" name="idInvoice">

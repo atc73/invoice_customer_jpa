@@ -1,8 +1,7 @@
 package com.example.management_app.dao;
 
 import com.example.management_app.connection.PersistenceManager;
-import com.example.management_app.model.Customer;
-import com.example.management_app.model.Invoice;
+import com.example.management_app.model.Product;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
@@ -13,19 +12,19 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-public class InvoiceDao implements Dao<Invoice>{
+public class ProductDao implements Dao<Product> {
 
     EntityManagerFactory emf = PersistenceManager.getEntityManager();
 
     @Override
-    public List<Invoice> getAll() {
-        List<Invoice> invoiceList = new ArrayList<>();
+    public List<Product> getAll() {
+        List<Product> productList = new ArrayList<>();
         EntityManager em = emf.createEntityManager();
         EntityTransaction et = em.getTransaction();
         try {
             et.begin();
-            TypedQuery<Invoice> query = em.createQuery("SELECT b FROM Invoice b", Invoice.class);
-            invoiceList = query.getResultList();
+            TypedQuery<Product> query = em.createQuery("SELECT b FROM Product b", Product.class);
+            productList = query.getResultList();
             et.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -35,16 +34,16 @@ public class InvoiceDao implements Dao<Invoice>{
         } finally {
             em.close();
         }
-        return invoiceList;
+        return productList;
     }
 
     @Override
-    public void save(Invoice invoice) {
+    public void save(Product product) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction et = em.getTransaction();
         try {
             et.begin();
-            em.persist(invoice);
+            em.persist(product);
             et.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -57,16 +56,16 @@ public class InvoiceDao implements Dao<Invoice>{
     }
 
     @Override
-    public Optional<Invoice> findById(Long id) {
+    public Optional<Product> findById(Long id) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction et = em.getTransaction();
         try {
             et.begin();
-            Invoice invoice = em.createQuery("SELECT b FROM Invoice b  WHERE b.id = :idParam", Invoice.class)
+            Product product = em.createQuery("SELECT b FROM Product b  WHERE b.id = :idParam", Product.class)
                     .setParameter("idParam", id)
                     .getSingleResult();
             et.commit();
-            return Optional.of(invoice);
+            return Optional.of(product);
         } catch (Exception e) {
             if (et.isActive()) {
                 et.rollback();
@@ -79,19 +78,19 @@ public class InvoiceDao implements Dao<Invoice>{
 
 
     @Override
-    public void update(Invoice invoiceUpdate) {
+    public void update(Product productUpdate) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction et = em.getTransaction();
-        Long id = invoiceUpdate.getInvoiceId();
+        Long id = productUpdate.getProductId();
 
         try {
             et.begin();
-            Invoice invoice = em.find(Invoice.class, id);
+            Product product = em.find(Product.class, id);
 
-            if (Objects.equals(invoice.getInvoiceId(), invoiceUpdate.getInvoiceId())) {
-                invoice.setInvoiceDate(invoiceUpdate.getInvoiceDate());
-                invoice.setTotal(invoiceUpdate.getTotal());
-                invoice.setCustomer(invoiceUpdate.getCustomer());
+            if (Objects.equals(product.getProductId(), productUpdate.getProductId())) {
+                product.setDescription(productUpdate.getDescription());
+                product.setPrice(productUpdate.getPrice());
+                product.setVat(productUpdate.getVat());
             }
             et.commit();
         } catch (Exception e) {
@@ -107,13 +106,13 @@ public class InvoiceDao implements Dao<Invoice>{
 
 
     @Override
-    public void delete(Invoice invoiceToDelete) {
+    public void delete(Product productToDelete) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction et = em.getTransaction();
         try {
             et.begin();
-            Invoice invoice = em.find(Invoice.class, invoiceToDelete.getInvoiceId());
-            em.remove(invoice);
+            Product product = em.find(Product.class, productToDelete.getProductId());
+            em.remove(product);
             et.commit();
         } catch (Exception e) {
             e.printStackTrace();

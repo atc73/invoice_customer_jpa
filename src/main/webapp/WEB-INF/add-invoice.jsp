@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <title>Add customer</title>
+  <title>Add invoice</title>
 </head>
 <body>
 
@@ -11,9 +11,6 @@
 <form method="post" action="/invoices/add">
   <label for="invoiceDate">Date :</label>
   <input id="invoiceDate" type="date" name="invoiceDate">
-
-  <label for="invoiceTotal">Total :</label>
-  <input id="invoiceTotal" type="number" step="0.01" min="0" name="invoiceTotal">
 
   <label for="customers">Choose a customer:</label>
   <select name="customers" id="customers">
@@ -24,6 +21,18 @@
     </c:forEach>
 
   </select>
+
+  <div>
+    <c:forEach items="${products}" var="product">
+
+      <label for="product">${product.name} :</label>
+      <input id="product" type="checkbox" value="${product.productId}" name="checkedProducts">
+
+      <label for="product">Quantity :</label>
+      <input type="number" name="quantity">
+
+    </c:forEach>
+  </div>
 
   <button>Add</button>
 </form>

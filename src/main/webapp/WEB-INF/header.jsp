@@ -1,9 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <header>
   <a href="${pageContext.request.contextPath}/customers">Customers</a>
-  <a href="${pageContext.request.contextPath}/customers/add">Add customers</a>
+  <a href="${pageContext.request.contextPath}/customers/add">Add customer</a>
   <a href="${pageContext.request.contextPath}/invoices">Invoices</a>
-  <a href="${pageContext.request.contextPath}/invoices/add">Add invoices</a>
+  <a href="${pageContext.request.contextPath}/invoices/add">Add invoice</a>
+  <a href="${pageContext.request.contextPath}/products">Products</a>
+  <a href="${pageContext.request.contextPath}/products/add">Add product</a>
   <a href="${pageContext.request.contextPath}/login"></a>
   <a href="${pageContext.request.contextPath}/logout"></a>
 

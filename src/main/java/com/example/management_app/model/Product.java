@@ -15,6 +15,9 @@ public class Product {
     private Long productId;
 
     @Column(nullable = false)
+    private String name;
+
+    @Column(nullable = false)
     private String description;
 
     @Column(nullable = false)
@@ -30,12 +33,27 @@ public class Product {
 
     }
 
+    public Product(String name, String description, Float price, Float vat) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.vat = vat;
+    }
+
     public Long getProductId() {
         return productId;
     }
 
     public void setProductId(Long productId) {
         this.productId = productId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
